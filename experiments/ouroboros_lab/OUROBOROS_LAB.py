@@ -124,8 +124,8 @@ def main():
     with open(os.path.join(args.outdir, "verdict.json"), "w") as f:
         json.dump({
             "verdict": verdict,
-            "cycle_detection_score": peak_val,
-            "is_cycle": is_cycle,
+            "cycle_detection_score": float(peak_val),
+            "is_cycle": bool(is_cycle),
             "summary": f"System state: {verdict}. Peak autocorrelation: {peak_val:.4f}"
         }, f, indent=2)
         
